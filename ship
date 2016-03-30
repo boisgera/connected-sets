@@ -1,0 +1,15 @@
+#!/bin/bash
+
+DOC="Connected Sets"
+eDOC="Connected\ Sets"
+TARGET="/www/complex-analysis"
+EUL=www.eul.ink
+
+ssh boisgera@$EUL mkdir -p "$TARGET"
+ssh boisgera@$EUL mkdir -p "$TARGET"/"$eDOC"
+
+scp -p "$DOC".pdf $EUL:"$TARGET"/"$eDOC"
+scp -p "$DOC".html $EUL:"$TARGET"/"$eDOC"/index.html
+scp -pr images $EUL:"$TARGET"/"$eDOC"
+
+
