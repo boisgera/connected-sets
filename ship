@@ -1,15 +1,28 @@
 #!/bin/bash
+set -euo pipefail
 
 DOC="Connected Sets"
-eDOC="Connected\ Sets"
-TARGET="/www/complex-analysis"
-EUL=www.eul.ink
+DIR="/www/complex-analysis"
+HOST=www.eul.ink
+LOGIN=boisgera
 
-ssh boisgera@$EUL mkdir -p "$TARGET"
-ssh boisgera@$EUL mkdir -p "$TARGET"/"$eDOC"
+# Helpers
+# ------------------------------------------------------------------------------
+escape () {
+  echo $(printf %q "$1")
+}
 
-scp -p "$DOC".pdf $EUL:"$TARGET"/"$eDOC"
-scp -p "$DOC".html $EUL:"$TARGET"/"$eDOC"/index.html
-scp -pr images $EUL:"$TARGET"/"$eDOC"
+me="$LOGIN@$HOST"
+target="$DIR"/$(escape "$DOC")
+
+# Main
+# ------------------------------------------------------------------------------
+ssh "$me" mkdir -p "$target"
+scp -pr "$DOC".txt "$me:$target"
+scp -pr "$DOC".html "$me:$target/index.html"
+scp -pr images "$me:$target/images"
+scp -pr "$DOC".pdf "$me:$target"
+scp -pr "$DOC".zip "$me:$target"
+
 
 
