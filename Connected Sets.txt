@@ -4,7 +4,7 @@
 [email]: mailto:Sebastien.Boisgerault@mines-paristech.fr
 
 ---
-license: "[CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)"
+license: "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0)"
 ---
 
 **TODO:**
