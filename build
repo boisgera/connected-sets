@@ -46,7 +46,7 @@ fi
 
 # Variables
 # ==============================================================================
-TOC="--toc --toc-depth=2"
+TOC="--toc --toc-depth=3"
 TYPO="--smart"
 LANG_="-V lang=en" # don't shadow the LANG variable.
 BIB_OPT=
