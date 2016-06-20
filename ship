@@ -18,7 +18,23 @@ target="$DIR"/$(escape "$DOC")
 # Main
 # ------------------------------------------------------------------------------
 ssh "$me" mkdir -p "$target"
-images=$(ls -d images 2>/dev/null || true)
-cp "$DOC".html "index.html"
-rsync -av "$DOC".{txt,html,pdf,zip} index.html "$images" "$me:$target"
+
+# Documents and Archive
+exts=(txt json html pdf zip)
+files=()
+for ext in "${exts[@]}"
+do
+  files+=("$DOC.$ext")
+done
+
+# Images
+if [ -e images ]; then
+  files+=("images")
+fi
+
+# Bibliography
+files+=($(ls -d *.bib 2>/dev/null || true))
+
+# Ship
+rsync -av "${files[@]}" "$me:$target"
 
