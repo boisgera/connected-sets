@@ -37,7 +37,7 @@ files+=($(ls -d *.bib 2>/dev/null || true)) # fragile wrt spaces & co.
 
 # Ship
 rsync -av "${files[@]}" "$host:$target"
-ssh "$host" rm -rf "$target/index.html"
 
-echo ssh "$host" ln -s "$target"/$(escape "$DOC").html "$target/index.html"
+# Make index.html
+ssh "$host" rm -rf "$target/index.html"
 ssh "$host" ln -s "$target"/"$(escape "$DOC")".html "$target/index.html"
