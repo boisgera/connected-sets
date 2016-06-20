@@ -288,7 +288,7 @@ path-connected component, it would be the union several disjoint open
 sets and hence could not be connected.
 \hfill $\blacksquare$
 
-An Alternate Characteristic
+Locally Constant Functions
 ================================================================================
 
 **Definition -- Locally Constant Function.** A function $f$ defined on a set $A$
@@ -299,7 +299,7 @@ centered on $a$ such that $f$ is constant on $A \cap D$:
   \forall \, b \in A, \; |b-a| < \epsilon \to f(b) = f(a).
   $$
 
-**Theorem -- Connectedness & Locally Constant Functions.** 
+**Theorem -- Locally Constant Functions & Connected Sets.** 
 A set $A$ is connected if and only if every locally constant 
 function defined on $A$ is constant.
 
