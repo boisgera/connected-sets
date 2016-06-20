@@ -267,7 +267,7 @@ def spectral():
 def topologist_sine_surve():
     pp.clf()
     ratio = 2.0 * 1.618
-    set_ratio(ratio)
+    set_ratio(ratio, bottom=0.15)
     pp.axis([-0.05, 1.05, -1.2, 1.2])
     pp.xticks([0.0, 0.2, 0.4, 0.6, 0.8, 1.0])
     pp.yticks([-1.0, 0.0, 1.0])
