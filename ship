@@ -18,11 +18,7 @@ target="$DIR"/$(escape "$DOC")
 # Main
 # ------------------------------------------------------------------------------
 ssh "$me" mkdir -p "$target"
-scp -pr "$DOC".txt "$me:$target"
-scp -pr "$DOC".html "$me:$target/index.html"
-scp -pr images "$me:$target/images"
-scp -pr "$DOC".pdf "$me:$target"
-scp -pr "$DOC".zip "$me:$target"
-
-
+images=$(ls -d images 2>/dev/null || true)
+cp "$DOC".html "index.html"
+rsync -av "$DOC".{txt,html,pdf,zip} index.html "$images" "$me:$target"
 
