@@ -92,7 +92,7 @@ hence it is path-connected. \hfill $\blacksquare$
 An open set is connected if and only if it is path-connected.
 
 
-Basic Properties
+Set Operations
 ================================================================================
 
 Many properties of connected sets are similar to properties of path-connected 
