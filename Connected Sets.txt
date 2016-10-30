@@ -19,36 +19,35 @@ The difference matters only when one deals with "pathological" sets;
 for "well-behaved" sets -- and that includes all open sets --
 the two properties are equivalent.
 
-
-**Remark -- Beyond the Complex Plane.**
-In this document, we use the word "set" to mean "subset of the (complex) plane"
+In this document, 
+we use the word "set" to mean "subset of the complex plane"
 because this is what we need most of the time.
 However, the theory still works if we interpret "set" 
 as "subset of a given normed vector space" instead;
-the only adaption that is required is the replacement of open disks 
-by open balls.
+the only adaption that is required is the replacement 
+of open disks by open balls.
 
 
 Path-Connected/Connected Sets 
 ================================================================================
 
-**Definition -- Path-Connected.** 
+**Definition -- Path-Connected Set.** 
 A set $A$ is *path-connected* if any pair of points of $A$ can be joined by a 
 path of $A$:
   $$
   \forall \, (w, z) \in A^2, \, 
   \exists \, \gamma \in C^0([0,1], A), \,
-  \gamma(0) = w \, \land \, \gamma(1) = z.
+  \gamma(0) = w \, \mbox{ and } \, \gamma(1) = z.
   $$
 
 **Definition -- Dilation.**
 A set $B$ is a *dilation* of a set $A$ if it is the union
 of a collection of non-empty open disks whose centers are the points of $A$:
   $$
-  B = \bigcup_{a \in A} D(a, r_a) \; \wedge \; \forall \, a \in A, \, r_a > 0.
+  B = \bigcup_{a \in A} D(a, r_a) \; \mbox{ and } \; \forall \, a \in A, \, r_a > 0.
   $$
 
-**Remark -- Dilations Are Non-Uniform.**
+**Remark -- Non-Uniformity of Dilations.**
 We borrowed the word *dilation* from Mathematical Morphology,
 but our use of the world is not quite standard.
 The dilation of a set $A$ by the 
@@ -61,17 +60,18 @@ non-empty open disk $D(0,r)$ would be classically defined as
 By contrast, the definition that we use allows *non-uniform* 
 dilations: the radius of the disks may change with their center.
 
-**Definition -- Connected.**
+**Definition -- Connected Set.**
 A set is *connected* if all its dilations are path-connected. 
 A set which is not connected is *disconnected*.
 
-**Theorem -- Path-Connected vs Connected.**
+**Theorem -- Path-Connected/Connected Set.**
 Every path-connected set is connected.
 Conversely, every open connected set is path-connected.
 
-**Proof.** Let $A$ be a path-connected set and let 
-$B = \cup_{a \in A} D_a$ be a dilation of $A$.  
-For any pair of points $w$ and $z$ in $B$, 
+**Proof.** 
+Let $A$ be a path-connected set and
+$B = \cup_{a \in A} D_a$ be a dilation of $A.$
+For any points $w$ and $z$ in $B$, 
 there are points $a$ and $b$ in $A$ such that $w \in D_a$ and $z \in D_b$. 
 There is a path that joins $w$ and $a$ in $D_a$, 
 a path that joins $a$ and $b$ in $A$ and 
@@ -88,7 +88,7 @@ and $A = \cup_{a \in A} D_a$.
 The set $A$ is one of its dilations,
 hence it is path-connected. \hfill $\blacksquare$
 
-**Corollary -- Open Sets.** 
+**Corollary -- Open Connected Sets.** 
 An open set is connected if and only if it is path-connected.
 
 
@@ -103,7 +103,8 @@ if $\mathcal{A}$ is a collection of path-connected/connected sets
 whose intersection $\cap \mathcal{A}$ is non-empty, 
 then the union $\cup \mathcal{A}$ is path-connected/connected.
 
-**Proof.** For path-connected sets: let $a$ and $b$ in $\cup \mathcal{A}$.
+**Proof.** 
+For path-connected sets: let $a$ and $b$ in $\cup \mathcal{A}$.
 There are some sets $A$ and $B$ in $\mathcal{A}$ such that $a \in A$ and 
 $b\in B$. The intersection $\cap \mathcal{A}$ is included in $A \cap B$,
 hence $A \cap B$ is not empty; let $c \in A \cap B$. 
@@ -160,15 +161,18 @@ Hence no such path $\gamma$ can exist and $A \cup B$ is not path-connected;
 as $A \cup B$ is open, it is not connected either.
 \hfill $\blacksquare$ 
 
-However, connected sets also have some interesting properties that are not 
-shared with all path-connected sets; for example:
+Connected sets also have some interesting properties 
+that are not shared by all path-connected sets; for example:
 
-**Theorem -- Closure.** The closure of a connected set is connected.
+**Theorem -- Closure of Connected Sets.** 
+The closure of a connected set is connected.
 
-**Proof.** Let $A$ be a connected set and let 
-$\cup_{b \in B} D_b$ be a dilation of its closure $B = \overline{A}$.
-For any $b \in B$, let $r_b$ be the distance between $b$ and the 
-complement of this closure. We have
+**Proof.** 
+Let $A$ be a connected set and let $\cup_{b \in B} D_b$ be a dilation of 
+its closure $B = \overline{A}$.
+For any $b \in B$, let $r_b$ be the distance between $b$ and 
+the complement of this dilation. 
+We have
   $$
   \cup_{b \in B} D_b = \cup_{b \in B} D(b, r_b).
   $$
@@ -204,7 +208,17 @@ however, it is not path-connected,
 there is for example no path of $\overline{A}$ that joins $(1,0)$ and $(0,0)$.
 
 ![The Topologist's Sine Curve.](images/topologist-sine-curve.pdf)
-
+Indeed, assume on the contrary that such a path $\gamma$ exists. 
+The sequence
+  $$t_n = (n/2 + 5/4)^{-1}, \; n \in \mathbb{N}$$
+belongs to $\left]0,1\right[$ and is decreasing, 
+therefore $|t_{n+1} - t_n| \to 0$ when $n \to +\infty$.
+By construction, we also have $\Im \gamma(t_n) = (-1)^n$ for any $n$, thus 
+$$|\gamma(t_{n+1})- \gamma(t_n)| \geq
+|\Im \gamma(t_{n+1})- \Im\gamma(t_n)| = 2.$$
+Therefore, the function $\gamma$, despite being continuous and defined on the 
+compact set $[0,1]$ cannot be uniformly continuous, which is a contradiction.
+<!--
 Indeed, assume on the contrary that such a path $\gamma$ exists. 
 As $\Re \gamma(0) = 1$ and $\Re \gamma(1) =0$,
 by the intermediate value theorem, for any positive integer $n$,
@@ -223,7 +237,7 @@ $$|\gamma(t_{n+1})- \gamma(t_n)| \geq
 |\Im \gamma(t_{n+1})- \Im\gamma(t_n)| = 2,$$
 hence the function $\gamma$, despite being continuous and defined on the 
 compact set $[0,1]$ cannot be uniformly continuous, which is a contradiction.
-
+-->
 
 Components
 ================================================================================
@@ -256,7 +270,7 @@ $c \in A$, the set $A_a \cup A_b$ is connected and contains $A_a$ and $A_b$,
 therefore $A_a = A_b$.
 \hfill $\blacksquare$
 
-**Corollary -- Connectedness & Components** 
+**Corollary -- Connectedness & Components.** 
 A set is path-connected/connected if and only if it has a 
 single path-connected/connected component.
 
@@ -291,12 +305,13 @@ sets and hence could not be connected.
 Locally Constant Functions
 ================================================================================
 
-**Definition -- Locally Constant Function.** A function $f$ defined on a set $A$
-is locally constant if for any $a$ in $A$, there is a non-empty open disk $D$
+**Definition -- Locally Constant Function.** 
+A function $f$ defined on a set $A$ is locally constant 
+if for any $a$ in $A$, there is a non-empty open disk $D$
 centered on $a$ such that $f$ is constant on $A \cap D$:
   $$
   \forall \, a \in A, \; \exists \, \epsilon > 0, \;
-  \forall \, b \in A, \; |b-a| < \epsilon \to f(b) = f(a).
+  \forall \, b \in A, \; |b-a| < \epsilon \, \Rightarrow \, f(b) = f(a).
   $$
 
 **Theorem -- Locally Constant Functions & Connected Sets.** 
@@ -307,16 +322,15 @@ function defined on $A$ is constant.
 Let $a \in A$ and $B = \{b \in A \; | \; f(b)=f(a) \}$. 
 Assume that $f$ is not constant, that is, 
 that $C = A \setminus B$ is non-empty.
-As $f$ is locally constant, the distance between $b$ and the set $C$
-is positive. Define $D_b = D(b, r_b)$ where $r_b = d(b, C) / 2 > 0$.
-We can perform a similar construction for 
-$C = \{c \in A \; | \; f(c) \neq f(a) \}$ and define a 
-disk $D_c = D(c, r_c)$ with $r_c = d(c, B) / 2 > 0$.
+As $f$ is locally constant, the distance between any point $b$ of $B$ 
+and the set $C$ is positive; 
+we may define $D_b = D(b, r_b)$ where $r_b = d(b, C) / 2 > 0$.
+We may perform a similar construction for any point $c$ of $C$ and
+define a disk $D_c = D(c, r_c)$ with $r_c = d(c, B) / 2 > 0$.
 By construction, the sets 
 $\cup_{b \in B} D_b$ and $\cup_{c \in C} D_c$ are open, non-empty
 and disjoints, hence the dilation $\cup_{a \in A} D_a$ of $A$ 
 is not path-connected. Therefore, $A$ is not connected.
-
 
 Conversely, if $A$ is not connected, 
 let $\cup_{a \in A} D_a$ be a dilation of $A$
