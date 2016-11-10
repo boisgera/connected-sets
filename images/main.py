@@ -54,6 +54,25 @@ def set_ratio(ratio, bottom=0.1, top=0.1, left=0.1, right=0.1):
     pp.gcf().subplots_adjust(bottom=bottom, top=1.0-top, left=left, right=1.0-right)
 
 
+def arrows(path, n=1, scale=1.0, color="k"):
+    def vec(c):
+        return np.array([np.real(c), np.imag(c)], dtype=np.float64)
+    ts = np.r_[0.0:n] / n + 0.5 / n
+    l = 0.1 * 0.75 * scale
+    w = 0.7 * l
+    d = 0.0 * l
+    vertices = np.array([[0.0, -w/2], [l, 0.0], [0.0, w/2], [0.0, -w/2]]) - [d, 0.0]
+    for t in ts:
+        z = vec(path(t))
+        dt = 1e-7
+        u = vec((path(t+dt) - path(t)) / dt)
+        u = u / la.norm(u)
+        P = np.array([[u[0], -u[1]], [u[1], u[0]]])
+        vs = [list(np.dot(P, v) + z) for v in vertices]
+        pp.gca().add_patch(pa.Polygon(vs, color=color, ec=color))
+
+
+
 # Differentiation Schemes (First Derivative)
 # ------------------------------------------------------------------------------
 
@@ -264,7 +283,7 @@ def spectral():
         #print r"f^({0})(0)".format(i), "{0:.100g}".format(c),
         #print "rel. error", "{0:.2g}".format(abs(c/scipy.misc.factorial(i) - 1.0))
 
-def topologist_sine_surve():
+def _topologist_sine_curve():
     pp.clf()
     ratio = 2.0 * 1.618
     set_ratio(ratio, bottom=0.15)
@@ -276,10 +295,47 @@ def topologist_sine_surve():
     t = 1 / t_inv
     pp.plot(t, np.sin(2*np.pi * t_inv), "k-")
 
+    save("topologist-sine-curve", dpi=600)
 
+def topologist_sine_curve():
+    pp.clf()
+    ratio = 2.0 * 1.618
+    set_ratio(ratio, bottom=0.15, left=0.05, right=0.05)
+    pp.axis([-0.005, 0.055, -1.2, 1.2])
+    #pp.xticks([0.0, 0.1, 0.2])
+    pp.yticks([-1.0, 0.0, 1.0])
+
+    t = 1.0 / np.arange(0.1, 10000.0, 0.01)
+    def gamma(t):
+        return t + 1j * np.sin(1.0/t)
+
+    n = np.arange(10)
+    xn = 1.0 / (n + 0.5) / np.pi
+    yn = (-1.0)**n
+
+    pp.plot(0, 0, ".", color="black")
+    pp.plot(xn, yn, ".", color="black")
+
+    for i in n:
+        if i >=6:
+            text = r"$a_{{{0}}}$".format(i)
+            pp.text(xn[i]+0.0025,0.95*yn[i], text, 
+                    horizontalalignment='center',
+                    verticalalignment='center', fontsize=10)
+
+    pp.text(-0.0020,0.0, "$a_{\infty}$", 
+        horizontalalignment='center',
+        verticalalignment='center', fontsize=10)
+
+
+    for i, p in enumerate(n[:-1]):
+        line = pp.plot([xn[i], xn[i+1]], [yn[i], yn[i+1]], "k--", color="grey")[0]
+        line.set_dashes([5, 1])
+
+    pp.plot(np.real(gamma(t)), np.imag(gamma(t)), "k-")
 
     save("topologist-sine-curve", dpi=600)
 
 if __name__ == "__main__":
-  topologist_sine_surve()
+  topologist_sine_curve()
 

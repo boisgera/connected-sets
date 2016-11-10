@@ -198,46 +198,52 @@ that is not path-connected:
 **Example -- The Topologist's Sine Curve.** 
 Consider 
   $$
-  A = \{(t, \sin 2\pi/t)  \; | \; t \in \left] 0, 1 \right]\}.
+  A = \{(x, \sin 1/x)  \; | \; x \in \left] 0, 1 \right]\}.
   $$
-It its path-connected -- 
+This set is path-connected -- 
 as the image by a continuous function of a path-connected set -- 
-hence its closure $\overline{A} = A \cup \{(0,y) \; | \; y \in [-1, +1] \}$
+hence its closure 
+  $$\overline{A} = A \cup \{(0,y) \; | \; y \in [-1, +1] \}$$
 is connected; 
-however, it is not path-connected,
-there is for example no path of $\overline{A}$ that joins $(1,0)$ and $(0,0)$.
+however, it is not path-connected.
 
 ![The Topologist's Sine Curve.](images/topologist-sine-curve.pdf)
-Indeed, assume on the contrary that such a path $\gamma$ exists. 
-The sequence
-  $$t_n = (n/2 + 5/4)^{-1}, \; n \in \mathbb{N}$$
-belongs to $\left]0,1\right[$ and is decreasing, 
-therefore $|t_{n+1} - t_n| \to 0$ when $n \to +\infty$.
-By construction, we also have $\Im \gamma(t_n) = (-1)^n$ for any $n$, thus 
-$$|\gamma(t_{n+1})- \gamma(t_n)| \geq
-|\Im \gamma(t_{n+1})- \Im\gamma(t_n)| = 2.$$
-Therefore, the function $\gamma$, despite being continuous and defined on the 
-compact set $[0,1]$ cannot be uniformly continuous, which is a contradiction.
-<!--
-Indeed, assume on the contrary that such a path $\gamma$ exists. 
-As $\Re \gamma(0) = 1$ and $\Re \gamma(1) =0$,
-by the intermediate value theorem, for any positive integer $n$,
-there is a $t_n$ in $\left] 0,1 \right[$ such that 
-$\Re \gamma(t_n) = (n/2 + 1/4)^{-1} \in \left] 0, 1 \right[$. 
-More precisely, applying the intermediate value theorem recursively 
-to the interval $]0, t_n[$ to find $t_{n+1}$ ensures that
-we can select a decreasing sequence $t_n$ with this property.
-As $A$ is the graph of a function, $\Re \gamma(t_n)$ determines uniquely
-$\Im \gamma(t_n)$: $\Im \gamma(t_n) = \sin 2\pi/t_n
-=(-1)^n.$
-As the sequence of $t_n$ is strictly decreasing and bounded from below, 
+
+Assume on the contrary that $\gamma:[0,1] \mapsto \mathbb{C}$ is a path of $\overline{A}$ that joins 
+the points $a_0 = (2/\pi,1)$ and $a_{\infty} = (0,0)$;
+it has to go through every point
+  $$
+  a_n = (x_n, y_n), \; n \in \mathbb{N} 
+  \; \mbox{ where } \;
+  \left|
+  \begin{array}{lll}
+  x_n &=& {1}/{((n+1/2) \pi)} \\
+  y_n &=& \sin 1/x_n = (-1)^n
+  \end{array}
+  \right.
+  $$
+in this specific order. 
+Indeed, given some $t_n \in \left[0,1\right[$ such that
+$\gamma(t_n) = a_n$, we have $\mathrm{Re}(\gamma(t_n)) = x_n$.
+As $\mathrm{Re}(\gamma(1)) = \mathrm{Re}(a_{\infty}) = 0$, by
+continuity of $t\in[0,1] \mapsto \mathrm{Re}(\gamma(t))$, there is
+a $t_{n+1} \in \left]t_n,1 \right[$ such that 
+$\mathrm{Re}(\gamma(t_{n+1})) = x_{n+1}$.
+Since for any $x>0$, there is a unique real number $y$ such that
+$(x,y) \in A$, this yields $\gamma(t_{n+1}) = a_{n+1}$.
+Now, since the sequence $t_n$ is decreasing and bounded from below, 
 necessarily $|t_{n+1} - t_n| \to 0$ when $n \to +\infty$. 
 But on the other hand, for any $n \in \mathbb{N}$, 
-$$|\gamma(t_{n+1})- \gamma(t_n)| \geq
-|\Im \gamma(t_{n+1})- \Im\gamma(t_n)| = 2,$$
-hence the function $\gamma$, despite being continuous and defined on the 
+$$
+\begin{split}
+|\gamma(t_{n+1})- \gamma(t_n)| &= |a_{n+1} - a_n| \\
+&\geq |y_{n+1} - y_n| \\
+&= 2 
+\end{split}
+$$
+Hence the function $\gamma$, despite being continuous and defined on the 
 compact set $[0,1]$ cannot be uniformly continuous, which is a contradiction.
--->
+
 
 Components
 ================================================================================
