@@ -71,20 +71,20 @@ Conversely, every open connected set is path-connected.
 **Proof.** 
 Let $A$ be a path-connected set and
 $B = \cup_{a \in A} D_a$ be a dilation of $A.$
-For any points $w$ and $z$ in $B$, 
-there are points $a$ and $b$ in $A$ such that $w \in D_a$ and $z \in D_b$. 
-There is a path that joins $w$ and $a$ in $D_a$, 
+For any points $w$ and $z$ in $B,$ 
+there are points $a$ and $b$ in $A$ such that $w \in D_a$ and $z \in D_b.$ 
+There is a path that joins $w$ and $a$ in $D_a,$ 
 a path that joins $a$ and $b$ in $A$ and 
-a path that joins $b$ and $z$ in $D_b$. 
-The concatenation of these paths joins $w$ and $z$ in $B$,
+a path that joins $b$ and $z$ in $D_b.$ 
+The concatenation of these paths joins $w$ and $z$ in $B,$
 hence $A$ is connected.
 
 Conversely, let $A$ be an open connected set. 
-For any $a\in A$, 
+For any $a\in A,$ 
 the distance $r_a$ between $a$ and the complement of $A$ --
 which is a closed set -- is positive, 
 hence the disk $D_a = D(a, r_a)$ is a non-empty subset of $A$
-and $A = \cup_{a \in A} D_a$. 
+and $A = \cup_{a \in A} D_a.$ 
 The set $A$ is one of its dilations,
 hence it is path-connected. \hfill $\blacksquare$
 
@@ -104,24 +104,24 @@ whose intersection $\cap \mathcal{A}$ is non-empty,
 then the union $\cup \mathcal{A}$ is path-connected/connected.
 
 **Proof.** 
-For path-connected sets: let $a$ and $b$ in $\cup \mathcal{A}$.
+For path-connected sets: let $a$ and $b$ in $\cup \mathcal{A}.$
 There are some sets $A$ and $B$ in $\mathcal{A}$ such that $a \in A$ and 
-$b\in B$. The intersection $\cap \mathcal{A}$ is included in $A \cap B$,
-hence $A \cap B$ is not empty; let $c \in A \cap B$. 
+$b\in B.$ The intersection $\cap \mathcal{A}$ is included in $A \cap B,$
+hence $A \cap B$ is not empty; let $c \in A \cap B.$ 
 There is a path of $A$ that joins $a$ and $c$ 
-and a path of $B$ that joins $c$ and $b$; 
-their concatenation joins $a$ and $b$ in $\cup \mathcal{A}$. 
+and a path of $B$ that joins $c$ and $b;$ 
+their concatenation joins $a$ and $b$ in $\cup \mathcal{A}.$ 
 Hence, this set is path-connected.
 
 For connected sets: let $\cup_{a \in \cup \mathcal{A}} D_a$ be a dilation of 
-$\cup \mathcal{A}$.
+$\cup \mathcal{A}.$
 We have
   $$
   \bigcup_{a \in \cup \mathcal{A}} D_a
   = \bigcup_{A \in \mathcal{A}} \cup_{a \in A} D_a.
   $$ 
-For any $A \in \mathcal{A}$, the set $\cup_{a \in A} D_a$ is a 
-dilation of $A$, hence it is path-connected; 
+For any $A \in \mathcal{A},$ the set $\cup_{a \in A} D_a$ is a 
+dilation of $A,$ hence it is path-connected; 
 the inclusion $A \subset \bigcup_{a \in A} D_a$ provides 
   $$
   \cap \mathcal{A}
@@ -133,29 +133,29 @@ the inclusion $A \subset \bigcup_{a \in A} D_a$ provides
 hence the intersection of all $\cup_{a \in A} D_a$ over $A \in \mathcal{A}$ is
 not empty.
 We may therefore apply the result of the theorem for path-connected sets to
-the collection $\{\cup_{a \in A} D_a \; | \; A \in \mathcal{A}\}$.
+the collection $\{\cup_{a \in A} D_a \; | \; A \in \mathcal{A}\}.$
 Our arbitrary dilation of $\cup \mathcal{A}$ is path-connected, 
 hence $\cup \mathcal{A}$ is connected.
 \hfill $\blacksquare$ 
 
 **Theorem -- Disjoint Union of Open Sets.** If $A$ and $B$ are two non-empty
-open sets such that $A \cap B = \varnothing$, then $A \cup B$ is not
+open sets such that $A \cap B = \varnothing,$ then $A \cup B$ is not
 path-connected/connected.
 
 **Proof.** Assume that $\gamma$ is a path of $A \cup B$ that joins a point 
-$a \in A$ and a point $b \in B$. 
+$a \in A$ and a point $b \in B.$ 
 Consider the function 
   $$
   \phi : t\in [0,1] \mapsto d(\gamma(t), A) - d(\gamma(t), B).
   $$ 
-If $z=\gamma(t) \in A$, for example when $t=0$, 
-$d(z, A) = 0$ and as $A$ is open and $A \cap B =\varnothing$, 
-$d(z, B) > 0$, hence $\phi(t) < 0$.
-Otherwise, for example when $t=1$, 
-$z=\gamma(t) \in B$, $d(z, B) = 0$ and as $B$ is open and $A \cap B = \varnothing$, 
-$d(z, A) > 0$, hence $\phi(t) >0$.
+If $z=\gamma(t) \in A,$ for example when $t=0,$ 
+$d(z, A) = 0$ and as $A$ is open and $A \cap B =\varnothing,$ 
+$d(z, B) > 0,$ hence $\phi(t) < 0.$
+Otherwise, for example when $t=1,$ 
+$z=\gamma(t) \in B,$ $d(z, B) = 0$ and as $B$ is open and $A \cap B = \varnothing,$ 
+$d(z, A) > 0,$ hence $\phi(t) >0.$
 But the function $\phi$ is also continuous; the intermediate value
-theorem asserts the existence of a $t \in \left]0,1\right[$ such that $\phi(t)=0$,
+theorem asserts the existence of a $t \in \left]0,1\right[$ such that $\phi(t)=0,$
 which is a contradiction. 
 Hence no such path $\gamma$ can exist and $A \cup B$ is not path-connected;
 as $A \cup B$ is open, it is not connected either.
@@ -169,24 +169,24 @@ The closure of a connected set is connected.
 
 **Proof.** 
 Let $A$ be a connected set and let $\cup_{b \in B} D_b$ be a dilation of 
-its closure $B = \overline{A}$.
-For any $b \in B$, let $r_b$ be the distance between $b$ and 
+its closure $B = \overline{A}.$
+For any $b \in B,$ let $r_b$ be the distance between $b$ and 
 the complement of this dilation. 
 We have
   $$
   \cup_{b \in B} D_b = \cup_{b \in B} D(b, r_b).
   $$
-Consider the dilation $\cup_{a \in A} D(a, r_a)$ of $A$. 
-It is a clearly a subset of the dilation of $B$;
+Consider the dilation $\cup_{a \in A} D(a, r_a)$ of $A.$ 
+It is a clearly a subset of the dilation of $B;$
 actually, we can prove that both sets are equal. 
 Assume that $z$ belongs to the dilation of $B$:
-there is a $b \in B$ such that $|z - b| < r_b$.
-As $B$ is the closure of $A$, there is a point $a \in A$
-such that $|a-b| < (r_b - |z-b|) / 2$; we have
+there is a $b \in B$ such that $|z - b| < r_b.$
+As $B$ is the closure of $A,$ there is a point $a \in A$
+such that $|a-b| < (r_b - |z-b|) / 2;$ we have
   $$
   |z-a| \leq |z-b| + |a-b| < r_b - |a - b| \leq r_a,
   $$
-hence the point $z$ also belongs to the dilation of $A$.
+hence the point $z$ also belongs to the dilation of $A.$
 As the dilation of $A$ is path-connected, so is the dilation of $B$: 
 $B$ is connected.
 \hfill $\blacksquare$
@@ -210,7 +210,7 @@ however, it is not path-connected.
 ![The Topologist's Sine Curve.](images/topologist-sine-curve.pdf)
 
 Assume on the contrary that $\gamma:[0,1] \mapsto \mathbb{C}$ is a path of $\overline{A}$ that joins 
-the points $a_0 = (2/\pi,1)$ and $a_{\infty} = (0,0)$;
+the points $a_0 = (2/\pi,1)$ and $a_{\infty} = (0,0);$
 it has to go through every point
   $$
   a_n = (x_n, y_n), \; n \in \mathbb{N} 
@@ -224,16 +224,16 @@ it has to go through every point
   $$
 in this specific order. 
 Indeed, given some $t_n \in \left[0,1\right[$ such that
-$\gamma(t_n) = a_n$, we have $\mathrm{Re}(\gamma(t_n)) = x_n$.
-As $\mathrm{Re}(\gamma(1)) = \mathrm{Re}(a_{\infty}) = 0$, by
-continuity of $t\in[0,1] \mapsto \mathrm{Re}(\gamma(t))$, there is
+$\gamma(t_n) = a_n,$ we have $\mathrm{Re}(\gamma(t_n)) = x_n.$
+As $\mathrm{Re}(\gamma(1)) = \mathrm{Re}(a_{\infty}) = 0,$ by
+continuity of $t\in[0,1] \mapsto \mathrm{Re}(\gamma(t)),$ there is
 a $t_{n+1} \in \left]t_n,1 \right[$ such that 
-$\mathrm{Re}(\gamma(t_{n+1})) = x_{n+1}$.
-Since for any $x>0$, there is a unique real number $y$ such that
-$(x,y) \in A$, this yields $\gamma(t_{n+1}) = a_{n+1}$.
+$\mathrm{Re}(\gamma(t_{n+1})) = x_{n+1}.$
+Since for any $x>0,$ there is a unique real number $y$ such that
+$(x,y) \in A,$ this yields $\gamma(t_{n+1}) = a_{n+1}.$
 Now, since the sequence $t_n$ is decreasing and bounded from below, 
-necessarily $|t_{n+1} - t_n| \to 0$ when $n \to +\infty$. 
-But on the other hand, for any $n \in \mathbb{N}$, 
+necessarily $|t_{n+1} - t_n| \to 0$ when $n \to +\infty.$ 
+But on the other hand, for any $n \in \mathbb{N},$ 
 $$
 \begin{split}
 |\gamma(t_{n+1})- \gamma(t_n)| &= |a_{n+1} - a_n| \\
@@ -241,7 +241,7 @@ $$
 &= 2 
 \end{split}
 $$
-Hence the function $\gamma$, despite being continuous and defined on the 
+Hence the function $\gamma,$ despite being continuous and defined on the 
 compact set $[0,1]$ cannot be uniformly continuous, which is a contradiction.
 
 
@@ -255,25 +255,25 @@ and connectedness.
 A *(path-connected/connected) component* of a set $A$ is a subset of $A$ 
 which is path-connected/connected and maximal with respect to inclusion among 
 such sets -- 
-that is, included in no other path-connected/connected subset of $A$.
+that is, included in no other path-connected/connected subset of $A.$
 
 **Theorem -- Partition into Components.** 
 The path-connected/connected components of a set $A$ are a partition of $A$: 
 they are a collection of non-empty and pairwise disjoint subsets of $A$ 
-whose union is $A$.
+whose union is $A.$
 
 **Proof.** 
 The proof is identical for path-connected and connected components.
-Let $a \in A$. Consider the collection $\mathcal{A}_a$ off all 
-connected subsets of $A$ that contain $a$.
+Let $a \in A.$ Consider the collection $\mathcal{A}_a$ off all 
+connected subsets of $A$ that contain $a.$
 The set $A_a = \cup \mathcal{A}_a$ is connected.
-By construction, the set $A_a$ is maximal: it is a component of $A$. 
+By construction, the set $A_a$ is maximal: it is a component of $A.$ 
 As every component of $A$ is maximal, it contains at least one point 
-$a \in A$: it is therefore non-empty and equal to $A_a$. 
-Hence the union of all components of $A$ is $\cup_{a \in A} A_a = A$. 
+$a \in A$: it is therefore non-empty and equal to $A_a.$ 
+Hence the union of all components of $A$ is $\cup_{a \in A} A_a = A.$ 
 Finally, if two such components $A_a$ and $A_b$ have a non-empty intersection
-$c \in A$, the set $A_a \cup A_b$ is connected and contains $A_a$ and $A_b$, 
-therefore $A_a = A_b$.
+$c \in A,$ the set $A_a \cup A_b$ is connected and contains $A_a$ and $A_b,$ 
+therefore $A_a = A_b.$
 \hfill $\blacksquare$
 
 **Corollary -- Connectedness & Components.** 
@@ -292,12 +292,12 @@ path-connected components and connected components are identical.
 All such components are open.
 
 **Proof.** 
-Let $A$ be an open set and let $B$ be a path-connected component of $A$.
-For any $b \in B$, there is a non-empty open disk $D$ centered on $b$ 
-which is included in $A$.
-The disk $D$ is a path-connected subset of $A$ that contains $a$;
+Let $A$ be an open set and let $B$ be a path-connected component of $A.$
+For any $b \in B,$ there is a non-empty open disk $D$ centered on $b$ 
+which is included in $A.$
+The disk $D$ is a path-connected subset of $A$ that contains $a;$
 it is therefore included in the unique maximal path-connected subset of $A$
-that contains $a$: the set $B$. Therefore, $B$ is open.
+that contains $a$: the set $B.$ Therefore, $B$ is open.
 
 The path-connected components of $A$ are open and path-connected, 
 hence they are also connected. 
@@ -313,7 +313,7 @@ Locally Constant Functions
 
 **Definition -- Locally Constant Function.** 
 A function $f$ defined on a set $A$ is locally constant 
-if for any $a$ in $A$, there is a non-empty open disk $D$
+if for any $a$ in $A,$ there is a non-empty open disk $D$
 centered on $a$ such that $f$ is constant on $A \cap D$:
   $$
   \forall \, a \in A, \; \exists \, \epsilon > 0, \;
@@ -324,15 +324,15 @@ centered on $a$ such that $f$ is constant on $A \cap D$:
 A set $A$ is connected if and only if every locally constant 
 function defined on $A$ is constant.
 
-**Proof.** Let $f$ be a locally constant function defined on $A$.
-Let $a \in A$ and $B = \{b \in A \; | \; f(b)=f(a) \}$. 
+**Proof.** Let $f$ be a locally constant function defined on $A.$
+Let $a \in A$ and $B = \{b \in A \; | \; f(b)=f(a) \}.$ 
 Assume that $f$ is not constant, that is, 
 that $C = A \setminus B$ is non-empty.
 As $f$ is locally constant, the distance between any point $b$ of $B$ 
 and the set $C$ is positive; 
-we may define $D_b = D(b, r_b)$ where $r_b = d(b, C) / 2 > 0$.
+we may define $D_b = D(b, r_b)$ where $r_b = d(b, C) / 2 > 0.$
 We may perform a similar construction for any point $c$ of $C$ and
-define a disk $D_c = D(c, r_c)$ with $r_c = d(c, B) / 2 > 0$.
+define a disk $D_c = D(c, r_c)$ with $r_c = d(c, B) / 2 > 0.$
 By construction, the sets 
 $\cup_{b \in B} D_b$ and $\cup_{c \in C} D_c$ are open, non-empty
 and disjoints, hence the dilation $\cup_{a \in A} D_a$ of $A$ 
