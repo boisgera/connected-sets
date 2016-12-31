@@ -48,8 +48,8 @@ of a collection of non-empty open disks whose centers are the points of $A$:
   $$
 
 **Remark -- Non-Uniformity of Dilations.**
-We borrowed the word *dilation* from Mathematical Morphology,
-but our use of the world is not quite standard.
+We borrowed the word *dilation* from [mathematical morphology],
+but our use of the word is not completely standard.
 The dilation of a set $A$ by the 
 non-empty open disk $D(0,r)$ would be classically defined as
   $$
@@ -59,6 +59,8 @@ non-empty open disk $D(0,r)$ would be classically defined as
   $$
 By contrast, the definition that we use allows *non-uniform* 
 dilations: the radius of the disks may change with their center.
+
+[mathematical morphology]: https://en.wikipedia.org/wiki/Mathematical_morphology
 
 **Definition -- Connected Set.**
 A set is *connected* if all its dilations are path-connected. 
@@ -96,7 +98,7 @@ Set Operations
 ================================================================================
 
 Many properties of connected sets are similar to properties of path-connected 
-sets, so many statements exist in two variant forms. For example:
+sets, so many statements exist in two variants. For example:
 
 **Theorem -- Union of Sets With a Non-Empty Intersection.** 
 if $\mathcal{A}$ is a collection of path-connected/connected sets
@@ -193,7 +195,7 @@ $B$ is connected.
 
 The equivalent statement is false for some path-connected sets. 
 Actually, we may leverage this difference to build a connected set 
-that is not path-connected:
+which is not path-connected:
 
 **Example -- The Topologist's Sine Curve.** 
 Consider 
@@ -301,7 +303,7 @@ that contains $a$: the set $B.$ Therefore, $B$ is open.
 
 The path-connected components of $A$ are open and path-connected, 
 hence they are also connected. 
-They are also maximal among the connected sets of $A$: 
+They are also maximal among the connected sets of $A\mathrm{:}$ 
 a connected component of $A$ contains a path-connected component of $A$
 if it contains a point of it; if it were to contain more than one 
 path-connected component, it would be the union several disjoint open
