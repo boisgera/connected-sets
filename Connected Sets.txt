@@ -209,7 +209,7 @@ however, it is not path-connected.
 
 ![The Topologist's Sine Curve.](images/topologist-sine-curve.pdf)
 
-Assume on the contrary that $\gamma:[0,1] \mapsto \mathbb{C}$ is a path of $\overline{A}$ that joins 
+Assume on the contrary that $\gamma:[0,1] \to \mathbb{C}$ is a path of $\overline{A}$ that joins 
 the points $a_0 = (2/\pi,1)$ and $a_{\infty} = (0,0);$
 it has to go through every point
   $$
