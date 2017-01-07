@@ -254,13 +254,14 @@ We define two concepts of components based respectively on path-connectedness
 and connectedness.
 
 **Definition -- Component.** 
-A *(path-connected/connected) component* of a set $A$ is a subset of $A$ 
-which is path-connected/connected and maximal with respect to inclusion among 
-such sets -- 
+A *(path-connected/connected) component* of a non-empty set $A$ is a subset of 
+$A$ which is path-connected/connected and maximal with respect to inclusion 
+among such sets -- 
 that is, included in no other path-connected/connected subset of $A.$
 
 **Theorem -- Partition into Components.** 
-The path-connected/connected components of a set $A$ are a partition of $A$: 
+The path-connected/connected components of a non-empty set $A$ are a partition 
+of $A$: 
 they are a collection of non-empty and pairwise disjoint subsets of $A$ 
 whose union is $A.$
 
@@ -279,7 +280,7 @@ therefore $A_a = A_b.$
 \hfill $\blacksquare$
 
 **Corollary -- Connectedness & Components.** 
-A set is path-connected/connected if and only if it has a 
+A non-empty set is path-connected/connected if and only if it has a 
 single path-connected/connected component.
 
 **Proof.** If a set is path-connected/connected, 
@@ -289,8 +290,9 @@ Conversely, if there is a unique component, again because the components
 form a partition of the set, it is the set itself, 
 which is therefore path-connected/connected.
 
-**Theorem -- Components of Open Sets.** The partitions of an open set into 
-path-connected components and connected components are identical.
+**Theorem -- Components of Open Sets.** 
+The partitions of a non-empty open set into path-connected components and 
+connected components are identical.
 All such components are open.
 
 **Proof.** 
