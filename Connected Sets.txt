@@ -58,7 +58,7 @@ non-empty open disk $D(0,r)$ would be classically defined as
   = \bigcup_{a \in A} D(a, r).
   $$
 By contrast, the definition that we use allows *non-uniform* 
-dilations: the radius of the disks may change with their center.
+dilations: the radius of the disks may change with their centers.
 
 [mathematical morphology]: https://en.wikipedia.org/wiki/Mathematical_morphology
 
@@ -233,7 +233,7 @@ a $t_{n+1} \in \left]t_n,1 \right[$ such that
 $\mathrm{Re}(\gamma(t_{n+1})) = x_{n+1}.$
 Since for any $x>0,$ there is a unique real number $y$ such that
 $(x,y) \in A,$ this yields $\gamma(t_{n+1}) = a_{n+1}.$
-Now, since the sequence $t_n$ is decreasing and bounded from below, 
+Now, since the sequence $t_n$ is increasing and bounded from above, 
 necessarily $|t_{n+1} - t_n| \to 0$ when $n \to +\infty.$ 
 But on the other hand, for any $n \in \mathbb{N},$ 
 $$
@@ -267,8 +267,8 @@ whose union is $A.$
 
 **Proof.** 
 The proof is identical for path-connected and connected components.
-Let $a \in A.$ Consider the collection $\mathcal{A}_a$ off all 
-connected subsets of $A$ that contain $a.$
+Let $a \in A.$ Consider the collection $\mathcal{A}_a$ of all 
+connected subsets of $A$ that contain the point $a.$
 The set $A_a = \cup \mathcal{A}_a$ is connected.
 By construction, the set $A_a$ is maximal: it is a component of $A.$ 
 As every component of $A$ is maximal, it contains at least one point 
