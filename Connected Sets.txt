@@ -1,5 +1,5 @@
 % Connected Sets
-% [Sébastien Boisgérault][email], Mines ParisTech
+% [Sébastien Boisgérault][email], MINES ParisTech
 
 [email]: mailto:Sebastien.Boisgerault@mines-paristech.fr
 
