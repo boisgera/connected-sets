@@ -289,6 +289,7 @@ As the components form a partition of the set, it is the only component.
 Conversely, if there is a unique component, again because the components
 form a partition of the set, it is the set itself, 
 which is therefore path-connected/connected.
+\hfill $\blacksquare$
 
 **Theorem -- Components of Open Sets.** 
 The partitions of a non-empty open set into path-connected components and 
