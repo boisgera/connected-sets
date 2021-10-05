@@ -32,7 +32,7 @@ jobs:
         run: npm install -g coffee-script
 
       - name: Create temp directory
-        run: mkdir -f tmp
+        run: mkdir -p tmp
 
       - name: Install pandoc-templates
         run: |
