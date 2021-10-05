@@ -3,6 +3,9 @@ tmp
 templates
 
 *.json
+*.html
+*.pdf
+*.zip
 
 images/*.pgf
 images/*.png
