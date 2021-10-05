@@ -42,7 +42,7 @@ jobs:
           ./install.sh
 
       - name: Install python pandoc
-        run: pip install pandoc==1.1.0
+        run: pip install pandoc==1.0.0a14
 
       - name: Install eul-doc
         run: |
