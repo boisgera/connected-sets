@@ -1,1 +1,10 @@
 tmp
+
+templates
+
+*.json
+
+images/*.pgf
+images/*.png
+images/*.svg
+images/*.pdf
