@@ -20,9 +20,6 @@ jobs:
           activate-environment: complex-analysis
           environment-file: environment.yml
 
-      - name: LaTeX install
-        run: sudo apt-get update && sudo apt-get install texlive-full
-
       - name: Misc. install
         run: sudo apt-get install git curl zip pdf2svg imagemagick fonts-inconsolata libgmp10
 
@@ -59,6 +56,8 @@ jobs:
           cd eul-style
           ./install &&
 
+      - name: LaTeX install
+        run: sudo apt-get update && sudo apt-get install texlive-full
 
       - name: Build
         run: ./build
