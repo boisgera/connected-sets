@@ -56,7 +56,7 @@ jobs:
         run: |
           cd /tmp
           git clone https://github.com/boisgera/eul-style.git
-          cd eul-style
+          cd eul-style 
           ./install &&
 
       - name: LaTeX install
