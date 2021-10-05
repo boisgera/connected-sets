@@ -104,7 +104,7 @@ cat "$json" | eul-doc --html > "$json_html"
 pandoc -f json $HTML_OPT "$json_html" > "_$html"
 rm "$json_html"
 eul-style -bibliography="$bib" "_$html" > "$html" && rm "_$html"
-
+ 
 # Generate ZIP File
 # ------------------------------------------------------------------------------
 mkdir -p "build_zip/$doc"
