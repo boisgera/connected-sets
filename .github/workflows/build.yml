@@ -57,7 +57,7 @@ jobs:
           cd /tmp
           git clone https://github.com/boisgera/eul-style.git
           cd eul-style 
-          ./install &&
+          ./install
 
       - name: LaTeX install
         run: sudo apt-get update && sudo apt-get install texlive-full
