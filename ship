@@ -1,0 +1,56 @@
+#!/bin/bash
+set -euo pipefail
+
+# Configuration
+# ------------------------------------------------------------------------------
+
+doc="Connected Sets"
+DIR="/www/complex-analysis"
+HOST=www.eul.ink
+LOGIN=boisgera
+
+
+# Helpers
+# ------------------------------------------------------------------------------
+escape () {
+  echo $(printf %q "$1")
+}
+
+
+# Convention over Configuration
+# ------------------------------------------------------------------------------
+txt=$(ls *.txt)
+doc="${txt%.*}"
+host="$LOGIN@$HOST"
+target="$DIR"/$(escape "$doc")
+
+
+# Gather Files
+# ------------------------------------------------------------------------------
+
+# Documents and Archive
+exts=(txt json html pdf zip)
+files=()
+for ext in "${exts[@]}"
+do
+  files+=("$doc.$ext")
+done
+
+# Images
+if [ -e images ]; then
+  files+=("images")
+fi
+
+# Bibliography
+files+=($(ls -d *.bib 2>/dev/null || true)) # fragile wrt spaces & co.
+
+
+# Ship & Tweak
+# ------------------------------------------------------------------------------
+
+# Ship
+rsync -av "${files[@]}" "$host:$target"
+
+# Make index.html
+ssh "$host" rm -rf "$target/index.html"
+ssh "$host" ln -s "$target"/"$(escape "$doc")".html "$target/index.html"
